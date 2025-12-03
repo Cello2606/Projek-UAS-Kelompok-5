@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Data Barang</title>
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/barang.css">
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="navbarTitle">
+            <a href="/menu"><h1>Ekspedisi Barang</h1></a>
+        </div>
+        <div class="navbarItems">
+                <div class="navbarLinks">
+                    <a href="/pelanggan">Pelanggan</a>
+                    <a href="/kurir">Kurir</a>
+                    <a href="/barang">List Barang</a>
+                    <a href="/pengiriman">List Pengiriman</a>
+                    <a href="/transaksi">List Transaksi</a>
+                    <a th:href="@{/logoutMenu}">Logout</a>
+                </div>
+            <div class="navbarButton">
+                <i class="bi bi-list"></i>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="first-box">
+        <h2>List Barang</h2>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Barang</th>
+                    <th>Jenis Barang</th>
+                    <th>Harga Barang</th>
+                    <th>Berat (kg)</th>
+                    <th>Waktu Persiapan</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody th:each="b, no : ${barangList}">
+                <tr>
+                    <td>
+                        <a th:href="@{/barang/{id}(id=${b.getPesananID()})}" th:text="${no.count}"></a>
+                    </td>
+                    <td th:text="${b.getNamaBarang()}"></td>
+                    <td th:text="${b.getJenisBarang()}"></td>
+                    <td th:text="${b.getHargaBarang()}"></td>
+                    <td th:text="${b.getBerat()}"></td>
+                    <td th:text="${b.getWaktu()}"></td>
+                    <td th:text="${b.getStatus()}"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+    </div>
+
+    <div class="second-box">
+        <div id="feedback-form">
+            <h2 class="header">Form Barang</h2>
+            <form th:action="@{/barang/submit/{id}(id=${barangRec?.getPesananID()})}"
+                  method="post" th:object="${barangInfo}" class="form-group">
+
+                <label for="pesananID" class="form-label">ID</label>
+                <input type="number" id="pesananID" name="pesananID"
+                       th:value="${barangRec != null} ? ${barangRec.getPesananID()} : '0'"
+                       readonly />
+
+                <label for="namaBarang" class="form-label">Nama Barang</label>
+                <input type="text" id="namaBarang" name="namaBarang"
+                       th:value="${barangRec?.getNamaBarang()}" required />
+
+                <label for="jenisBarang" class="form-label">Jenis Barang</label>
+                <input type="text" id="jenisBarang" name="jenisBarang"
+                       th:value="${barangRec?.getJenisBarang()}" required />
+
+                <label for="hargaBarang" class="form-label">Harga Barang</label>
+                <input type="number" id="hargaBarang" name="hargaBarang"
+                       th:value="${barangRec?.getHargaBarang()}" required />
+
+                <label for="berat" class="form-label">Berat (kg)</label>
+                <input type="number" id="berat" name="berat"
+                       th:value="${barangRec?.getBerat()}" required />
+
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary" name="add">Add</button>
+                    <button type="submit" class="btn btn-success" name="edit">Edit</button>
+                    <button type="submit" class="btn btn-danger" name="delete" 
+                            onclick="return confirm('Are you sure?')">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

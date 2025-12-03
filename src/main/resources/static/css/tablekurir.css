@@ -1,0 +1,41 @@
+/* WRAPPER TABEL */
+.first-box {
+    width: 90%;
+    margin: 25px auto;
+    padding: 20px;
+}
+
+/* TABEL STYLE */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.styled-table th {
+    background: #3b82f6;
+    color: white;
+    padding: 12px;
+    text-align: center;
+}
+
+.styled-table td {
+    padding: 10px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+.styled-table tr:nth-child(even) {
+    background: #f8fafc;
+}
+
+.styled-table a {
+    text-decoration: none;
+    color: #1d4ed8;
+    font-weight: bold;
+}
+
+.styled-table a:hover {
+    color: #1e3a8a;
+}

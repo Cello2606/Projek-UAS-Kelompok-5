@@ -1,0 +1,104 @@
+<html>
+<head>
+    <title>List Transaksi</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/table.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/css/form.css}"/>
+    <link rel="stylesheet" href="/css/menu.css">
+</head>
+<body>
+
+    <div class="navbar">
+            <div class="navbarTitle">
+                <a href="/menu"><h1>Ekspedisi Barang</h1></a>
+            </div>
+            <div class="navbarItems">
+                <div class="navbarLinks">
+                    <a href="/pelanggan">Pelanggan</a>
+                    <a href="/kurir">Kurir</a>
+                    <a href="/barang">List Barang</a>
+                    <a href="/pengiriman">List Pengiriman</a>
+                    <a href="/transaksi">List Transaksi</a>
+                    <a th:href="@{/logoutMenu}">Logout</a>
+                </div>
+                <div class="navbarButton">
+                    <i class="bi bi-list"></i>
+                </div>
+            </div>
+        </div>
+
+    <div class="first-box">
+        <h2>List Transaksi</h2>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>ID Transaksi</th>
+                    <th>Ongkos Kirim</th>
+                    <th>Metode Pembayaran</th>
+                    <th>ID Pelanggan</th>
+                    <th>ID Pengiriman</th>
+                </tr>
+            </thead>
+            <tbody th:each="t, no : ${transaksiList}">
+                <tr>
+                    <td>
+                        <a th:href="@{/transaksi/{id}(id=${t.getIdTransaksi()})}" th:text="${t.getIdTransaksi()}"></a>
+                    </td>
+                    <td th:text="${t.getTotalOngkos()}"></td>
+                    <td th:text="${t.getMetodePembayaran()}"></td>
+                    <td th:text="${t.pelanggan != null ? t.pelanggan.AccountID : '—'}"></td>
+                    <td th:text="${t.pengiriman != null ? t.pengiriman.pesananID : '—'}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="second-box">
+        <div id="feedback-form">
+            <h2 class="header">Transaksi</h2>
+            <form th:action="@{/transaksi/submit/{id}(id=${transaksiRec?.getIdTransaksi()})}"
+                  method="post" th:object="${transaksiInfo}" class="form-group">
+
+                  <label for="pelanggan" class="form-label">Pelanggan</label>
+                    <select id="pelanggan" name="pelanggan.AccountID" required>
+                        <option value="">-- Pilih Pelanggan --</option>
+                        <option th:each="p : ${pelangganList}" th:value="${p.AccountID}" th:text="${p.nama}">
+                        </option>
+                    </select>
+
+                    <label for="pengiriman" class="form-label">Pengiriman</label>
+                    <select id="pengiriman" name="pengiriman.PesananID" required>
+                        <option value="">-- Pilih Pengiriman --</option>
+                        <option th:each="pg : ${pengirimanList}"
+                                th:value="${pg.PesananID}"
+                                th:text="${pg.alamatTujuan}">
+                        </option>
+                    </select>
+
+                <label for="idTransaksi" class="form-label">ID Transaksi</label>
+                <input type="number" id="idTransaksi" name="idTransaksi"
+                       th:value="${transaksiRec != null} ? ${transaksiRec.getIdTransaksi()} : '0'"
+                       readonly />
+
+
+                <label for="totalOngkos" class="form-label">Ongkos Kirim</label>
+                <input type="number" id="totalOngkos" name="totalOngkos"
+                       th:value="${transaksiRec?.getTotalOngkos()}"
+                       required />
+
+                <label for="metodePembayaran" class="form-label">Metode Pembayaran</label>
+                <input type="text" id="metodePembayaran" name="metodePembayaran"
+                       th:value="${transaksiRec?.getMetodePembayaran()}"
+                       required />
+
+                <div class="button-group">
+                    <button type="submit" class="btn btn-primary" name="add">Add</button>
+                    <button type="submit" class="btn btn-success" name="edit">Edit</button>
+                    <button type="submit" class="btn btn-danger" name="delete">Delete</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

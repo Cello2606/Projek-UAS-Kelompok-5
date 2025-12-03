@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/menu.css">
+    <link rel="stylesheet" href="/css/loginbaru.css">
+</head>
+<body>
+
+    <div class="navbar">
+            <div class="navbarTitle">
+                <a href="/menu"><h1>Ekspedisi Barang</h1></a>
+            </div>
+            <div class="navbarItems">
+                <div class="navbarLinks">
+                    <a href="/pelanggan">Pelanggan</a>
+                    <a href="/kurir">Kurir</a>
+                    <a href="/barang">List Barang</a>
+                    <a href="/pengiriman">List Pengiriman</a>
+                    <a href="/transaksi">List Transaksi</a>
+                </div>
+                <div class="navbarButton">
+                    <i class="bi bi-list"></i>
+                </div>
+            </div>
+        </div>
+
+<div class="container">
+        <form th:action="@{/validateLoginMenu}" method="post" class="form-group" enctype="multipart/form-data">
+        <h2 class="login-title">Login</h2>
+
+        <label for="PesananID" class="login-label">ID Pesanan</label>
+        <input type="number" id="PesananID" name="PesananID" class="login-input" required>
+
+        <label for="noPemesanan" class="login-label">No Pemesanan</label>
+        <input type="text" id="noPemesanan" name="noPemesanan" class="login-input">
+
+        <button type="submit" class="login-btn">Login</button>
+        </form>
+</div>
+
+</body>
+</html>

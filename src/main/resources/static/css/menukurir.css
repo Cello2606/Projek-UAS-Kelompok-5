@@ -1,0 +1,39 @@
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e40af;        /* Biru navy */
+    padding: 12px 20px;
+    color: white;
+}
+
+.navbarTitle h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.navbarTitle a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbarItems {
+    display: flex;
+    align-items: center;
+}
+
+.navbarLinks a {
+    margin-right: 18px;
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+}
+
+.navbarLinks a:hover {
+    text-decoration: underline;
+}
+
+.navbarButton {
+    display: none;  /* optional hamburger button */
+}

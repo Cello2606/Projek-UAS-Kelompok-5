@@ -1,0 +1,128 @@
+/* Form Style - Clean Card Design */
+
+#feedback-form {
+    width: 350px; /* Sedikit lebih lebar dari sebelumnya */
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Shadow lembut */
+    font-family: 'Segoe UI', sans-serif;
+    border: 1px solid #eaeaea;
+}
+  
+#feedback-form * {
+    box-sizing: border-box;
+}
+  
+#feedback-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50; /* Sama dengan warna header tabel */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.4em;
+    letter-spacing: 1px;
+}
+  
+#feedback-form label {
+    color: #555;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Input Styling */
+#feedback-form input[type=text],
+#feedback-form input[type=number],
+#feedback-form input[type=password],
+#feedback-form input[type=date],
+#feedback-form select {
+    display: block;
+    width: 100%;
+    height: 40px; /* Input lebih tinggi */
+    padding: 8px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efek saat input diklik (Fokus) */
+#feedback-form input:focus,
+#feedback-form select:focus {
+    border-color: #3498db; /* Border jadi biru */
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3); /* Glow biru */
+}
+
+#feedback-form textarea {
+    display: block;
+    width: 100%;
+    height: 80px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+    font-family: inherit;
+}
+  
+#feedback-form input[type=checkbox] {
+    float: left;
+    margin-right: 10px;
+}
+  
+/* Tombol Utama (Add/Login) */
+#feedback-form button[type=submit] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    
+    /* Warna Flat Blue */
+    background-color: #3498db; 
+    color: white;
+    
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#feedback-form button[type=submit]:hover {
+    background-color: #2980b9; /* Biru lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek naik sedikit */
+}
+
+/* Tombol Khusus (Override warna untuk tombol Delete dan Edit) */
+.btn-danger {
+    background-color: #e74c3c !important; /* Merah */
+}
+.btn-danger:hover {
+    background-color: #c0392b !important;
+}
+
+.btn-success {
+    background-color: #0000FF !important;
+}
+.btn-success:hover {
+    background-color: #6495ED !important;
+}
+
+/* Group Button agar rapi */
+.button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.button-group button {
+    flex: 1; /* Tombol berbagi lebar yang sama */
+}

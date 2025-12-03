@@ -1,0 +1,94 @@
+.second-box {
+    margin: 16px 24px;
+}
+
+#feedback-form {
+    padding: 20px 24px 24px;
+}
+
+#feedback-form .header {
+    margin-bottom: 18px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #374151;
+    margin-top: 6px;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    background: #f9fafb;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.18);
+    background: #ffffff;
+}
+
+/* Tombol */
+.button-group {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.btn {
+    border: none;
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: #ffffff;
+    transition: transform 0.1s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+}
+
+.btn-success {
+    background-color: #16a34a;
+}
+
+.btn-danger {
+    background-color: #dc2626;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+    opacity: 0.9;
+}
+
+/* Biar form & table rapi di HP */
+@media (max-width: 768px) {
+    .first-box,
+    .second-box {
+        margin: 12px 12px;
+    }
+}

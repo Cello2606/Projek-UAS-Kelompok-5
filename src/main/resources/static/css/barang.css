@@ -1,0 +1,127 @@
+/* === THEME: BLUE (BARANG) === */
+
+/* --- TABLE STYLE --- */
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; 
+    overflow: hidden;
+}
+
+.styled-table thead tr {
+    background-color: #2c3e50; /* Biru Gelap */
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    transition: background-color 0.2s ease;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f2f6f8; /* Biru sangat muda */
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 3px solid #2c3e50;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #dbe9f4; /* Hover Biru Muda */
+    color: #2c3e50;
+}
+
+.styled-table a {
+    text-decoration: none;
+    color: #2980b9;
+    font-weight: bold;
+}
+
+/* --- FORM STYLE --- */
+#feedback-form {
+    width: 350px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(44, 62, 80, 0.15); /* Shadow kebiruan */
+    font-family: 'Segoe UI', sans-serif;
+    border-top: 5px solid #3498db; /* Aksen Atas Biru */
+}
+
+#feedback-form h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #2c3e50;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#feedback-form label {
+    color: #34495e;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+#feedback-form input, #feedback-form select {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    margin-bottom: 20px;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+#feedback-form input:focus, #feedback-form select:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Tombol Utama (Biru) */
+#feedback-form button[type=submit] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#feedback-form button[type=submit]:hover {
+    background-color: #2980b9;
+}
+
+/* Tombol Aksi Lain */
+.btn-danger { background-color: #e74c3c !important; }
+.btn-danger:hover { background-color: #c0392b !important; }
+
+.btn-success { background-color: #2ecc71 !important; }
+.btn-success:hover { background-color: #27ae60 !important; }
+
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+.button-group button { flex: 1; }

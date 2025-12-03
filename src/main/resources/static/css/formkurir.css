@@ -1,0 +1,80 @@
+/* WRAPPER FORM */
+.second-box {
+    width: 90%;
+    margin: 25px auto;
+}
+
+/* CARD */
+#feedback-form {
+    background: #ffffff;
+    padding: 25px;
+    max-width: 420px;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+#feedback-form .header {
+    text-align: center;
+    color: #1e40af;
+    margin-bottom: 20px;
+}
+
+/* INPUT GROUP */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #cbd5e1;
+    font-size: 15px;
+}
+
+input:focus {
+    border-color: #2563eb;
+    outline: none;
+    box-shadow: 0 0 5px rgba(37,99,235,0.3);
+}
+
+/* BUTTONS */
+.button-group {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 15px;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-primary {
+    background: #2563eb;
+}
+
+.btn-success {
+    background: #16a34a;
+}
+
+.btn-danger {
+    background: #dc2626;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
